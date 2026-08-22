@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1787347959673,
+      "tag": "0000_lyrical_zeigeist",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1787348622531,
+      "tag": "0001_broken_machine_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1787349774666,
+      "tag": "0002_easy_zuras",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1787386880479,
+      "tag": "0003_sour_vargas",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1787400029819,
+      "tag": "0004_married_morlun",
+      "breakpoints": true
+    }
+  ]
+}

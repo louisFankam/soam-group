@@ -1,0 +1,1 @@
+ALTER TABLE `realisations` ADD `span` integer DEFAULT 1 NOT NULL;

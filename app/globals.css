@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0a0f1e;
+  --color-border: #e4e8ef;
+  --color-input: #f4f6fb;
+  --color-primary: #1a4fbd;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #dce9ff;
+  --color-secondary-foreground: #1a4fbd;
+  --color-accent-green: #27ae60;
+  --color-accent-green-light: #e8f8f0;
+  --color-accent-orange: #e67e22;
+  --color-accent-orange-light: #fdf3e7;
+  --color-accent-dark: #0a0f1e;
+  --color-muted: #f0f3f8;
+  --color-muted-foreground: #6b7894;
+  --color-card: #ffffff;
+  --color-card-border: #e4e8ef;
+  --color-hero-dark: #060d1f;
+  --color-section-alt: #f7f9fc;
+  --color-primary-deep: #0f3490;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-2xl: 32px;
+
+  --font-body: var(--font-dm-sans), sans-serif;
+  --font-headings: var(--font-dm-sans), sans-serif;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Bandeau partenaires défilant (contenu dupliqué 2x, translation -50%) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-hover:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Gradient CTA en mouvement lent */
+@keyframes cta-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.cta-gradient {
+  background-image: linear-gradient(
+    135deg,
+    #0f3490 0%,
+    #1a4fbd 35%,
+    #27ae60 70%,
+    #1a4fbd 100%
+  );
+  background-size: 300% 300%;
+  animation: cta-pan 14s ease-in-out infinite;
+}
+
+/* Zoom très lent de l'image hero */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-zoom {
+  animation: hero-zoom 24s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .cta-gradient,
+  .hero-zoom {
+    animation: none;
+  }
+}
