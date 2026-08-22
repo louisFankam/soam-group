@@ -67,7 +67,7 @@ export default function HeroSection({ hero }: { hero: Hero }) {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease }}
-          className="font-headings font-bold text-4xl lg:text-5xl leading-tight text-white mb-6"
+          className="font-headings font-bold text-3xl min-[400px]:text-4xl lg:text-5xl leading-tight text-white mb-6"
         >
           {hero.title}
         </motion.h1>

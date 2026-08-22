@@ -94,15 +94,15 @@ export default async function AProposPage() {
         <section className="bg-primary px-6 lg:px-16 py-12">
           <Stagger className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {stats.map((s) => (
-              <Item key={s.label} className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
-                  <Icon i={s.icon} size={22} className="text-white" />
+              <Item key={s.label} className="flex items-center gap-3 lg:gap-4">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                  <Icon i={s.icon} size={20} className="text-white" />
                 </div>
-                <div>
-                  <div className="text-white font-headings font-bold text-2xl">
+                <div className="min-w-0">
+                  <div className="text-white font-headings font-bold text-xl sm:text-2xl leading-none">
                     <CountUp value={s.n} />
                   </div>
-                  <div className="text-white/70 text-sm">{s.label}</div>
+                  <div className="text-white/70 text-xs sm:text-sm mt-1">{s.label}</div>
                 </div>
               </Item>
             ))}

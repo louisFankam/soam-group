@@ -65,16 +65,16 @@ export default async function Home() {
             {stats.map((s, i) => (
               <Item
                 key={s.label}
-                className={`flex items-center gap-5 ${i < 3 ? "lg:border-r lg:border-white/20 lg:pr-5" : ""}`}
+                className={`flex items-center gap-3 lg:gap-5 ${i < 3 ? "lg:border-r lg:border-white/20 lg:pr-5" : ""}`}
               >
-                <div className="w-14 h-14 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
-                  <Icon i={s.icon} size={26} className="text-white" />
+                <div className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                  <Icon i={s.icon} size={20} className="text-white" />
                 </div>
-                <div>
-                  <div className="text-white font-headings font-bold text-3xl leading-none">
+                <div className="min-w-0">
+                  <div className="text-white font-headings font-bold text-xl sm:text-2xl lg:text-3xl leading-none">
                     <CountUp value={s.n} />
                   </div>
-                  <div className="text-white/70 font-body text-sm mt-1">
+                  <div className="text-white/70 font-body text-xs sm:text-sm mt-1">
                     {s.label}
                   </div>
                 </div>
@@ -279,11 +279,11 @@ export default async function Home() {
 
         {/* ACTUALITÉS */}
         <section id="actualites" className="px-6 lg:px-16 py-20 bg-section-alt">
-          <div className="flex items-end justify-between gap-6 mb-10">
+          <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
             <Reveal>
               <SectionHeader {...t.accueil.actualites} align="left" />
             </Reveal>
-            <Reveal delay={0.15} className="lg:mb-12 shrink-0">
+            <Reveal delay={0.15} className="lg:mb-12">
               <Link
                 href="/actualites"
                 className="group text-primary text-sm font-medium flex items-center gap-1"

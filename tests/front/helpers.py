@@ -36,6 +36,13 @@ def start_server() -> None:
     _server_proc = subprocess.Popen(
         ["npx", "next", "start", "-p", str(PORT)],
         cwd=ROOT,
+        env={
+            **os.environ,
+            # ponytail : tests = DB locale seedée, jamais la prod Turso
+            "TURSO_DATABASE_URL": "file:./soam.db",
+            "TURSO_AUTH_TOKEN": "",
+            "BLOB_READ_WRITE_TOKEN": "",
+        },
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
         start_new_session=True,

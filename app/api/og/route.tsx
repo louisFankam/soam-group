@@ -37,8 +37,17 @@ export function GET(req: Request) {
           >
             S
           </div>
-          <div style={{ fontSize: 34, fontWeight: 700 }}>
-            SOAM <span style={{ color: "#27ae60" }}>GROUP</span>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              fontSize: 34,
+              fontWeight: 700,
+            }}
+          >
+            <span>SOAM</span>
+            <span style={{ color: "#27ae60" }}>GROUP</span>
           </div>
         </div>
 

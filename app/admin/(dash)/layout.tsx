@@ -19,7 +19,7 @@ export default async function AdminDashLayout({
     .where(and(eq(messages.lu, false), eq(messages.archive, false)));
 
   return (
-    <div className="flex min-h-screen bg-section-alt">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-section-alt">
       <AdminSidebar nonLus={nonLus} />
       <div className="flex-1 min-w-0 px-5 lg:px-8 py-6">{children}</div>
     </div>
