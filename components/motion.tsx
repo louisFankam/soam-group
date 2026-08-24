@@ -16,10 +16,13 @@ export function MotionConfigUser({ children }: { children: ReactNode }) {
   return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }
 
+// Easing « marqué » partagé avec le héros.
+const easeMarque = [0.22, 1, 0.36, 1] as const;
+
 export function Reveal({
   children,
   delay = 0,
-  y = 24,
+  y = 56,
   className,
 }: {
   children: ReactNode;
@@ -30,10 +33,10 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      transition={{ duration: 0.65, delay, ease: easeMarque }}
     >
       {children}
     </motion.div>
@@ -42,15 +45,16 @@ export function Reveal({
 
 const containerVariants: Variants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
+  show: { transition: { staggerChildren: 0.1 } },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, ease: "easeOut" },
+    scale: 1,
+    transition: { duration: 0.55, ease: easeMarque },
   },
 };
 

@@ -3,13 +3,8 @@ import HeroSection from "@/components/HeroSection";
 import FaqAccordion from "@/components/FaqAccordion";
 import Icon, { Img } from "@/components/ui";
 import { chipBg } from "@/components/colors";
-import {
-  SectionHeader,
-  ExpertiseCard,
-  SoftwareCard,
-  TestimonialCard,
-  NewsCard,
-} from "@/components/cards";
+import { SectionHeader, ExpertiseCard, SoftwareCard, NewsCard } from "@/components/cards";
+import CarrouselTemoignages from "@/components/CarrouselTemoignages";
 import PortfolioGrid from "@/components/PortfolioGrid";
 import {
   CountUp,
@@ -254,17 +249,13 @@ export default async function Home() {
         </section>
 
         {/* TÉMOIGNAGES */}
-        <section className="px-6 lg:px-16 py-20 bg-background">
+        <section className="px-6 lg:px-16 py-20 bg-background overflow-hidden">
           <Reveal>
             <SectionHeader {...t.accueil.temoignages} />
           </Reveal>
-          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <Item key={t.name}>
-                <TestimonialCard {...t} />
-              </Item>
-            ))}
-          </Stagger>
+          <Reveal delay={0.15}>
+            <CarrouselTemoignages temoignages={testimonials} />
+          </Reveal>
         </section>
 
         {/* ACTUALITÉS */}
