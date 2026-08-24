@@ -627,6 +627,20 @@ export const testimonials = [
     role: "Médecin Chef",
     company: "Clinique Sainte Famille",
   },
+  {
+    quote:
+      "Leur système de vidéosurveillance couvre désormais l'intégralité de nos trois entrepôts. Un déploiement impeccable, dans les délais annoncés.",
+    name: "Salif Compaoré",
+    role: "Directeur Logistique",
+    company: "Faso Négoce",
+  },
+  {
+    quote:
+      "Grâce à SOAM PAY, nos paiements mobiles sont enfin centralisés. Le support est disponible et les mises à jour sont régulières.",
+    name: "Mariam Kaboré",
+    role: "Gérante",
+    company: "Boutique Faso Design",
+  },
 ];
 
 export const news = [
