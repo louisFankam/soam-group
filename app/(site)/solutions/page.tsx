@@ -79,11 +79,7 @@ export default async function SolutionsPage() {
                       className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="p-6 flex flex-col flex-1">
-                      <div
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${chipBg(s.color)}`}
-                      >
-                        <Icon i={s.icon} size={20} />
-                      </div>
+                      <Icon i={s.icon} size={24} className={`block mb-3 ${chipBg(s.color)}`} />
                       <h2 className="font-headings font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
                         {s.title}
                       </h2>

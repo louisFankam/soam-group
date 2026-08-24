@@ -140,9 +140,7 @@ export default async function ContactPage({
                   { icon: "message-circle", label: "WhatsApp", value: site.whatsapp, color: "green" as const },
                 ].map((c) => (
                   <div key={c.label} className="flex gap-4 items-start p-4 rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md group">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${chipBg(c.color)} transition-transform duration-300 group-hover:scale-110`}>
-                      <Icon i={c.icon} size={18} />
-                    </div>
+                    <Icon i={c.icon} size={22} className={`shrink-0 mt-0.5 ${chipBg(c.color)}`} />
                     <div>
                       <div className="text-xs font-body font-medium text-muted-foreground mb-0.5">{c.label}</div>
                       <div className="text-sm font-body text-foreground">{c.value}</div>

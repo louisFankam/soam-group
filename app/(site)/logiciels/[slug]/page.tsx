@@ -68,11 +68,7 @@ export default async function LogicielPage({
               <ul className="space-y-3">
                 {product.features.map((f) => (
                   <li key={f} className="flex items-center gap-3 text-sm text-foreground">
-                    <span
-                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${chipBg(product.color)}`}
-                    >
-                      <Icon i="check" size={14} />
-                    </span>
+                    <Icon i="check" size={16} className={`shrink-0 mt-0.5 ${chipBg(product.color)}`} />
                     {f}
                   </li>
                 ))}
@@ -104,11 +100,7 @@ export default async function LogicielPage({
               {product.benefits.map((b, i) => (
                 <Reveal key={b} delay={i * 0.1}>
                   <div className="bg-card border border-card-border rounded-xl p-6 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                    <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 font-headings font-bold ${chipBg(product.color)}`}
-                    >
-                      {i + 1}
-                    </div>
+                    <div className={`font-headings font-bold text-xl mb-3 ${chipBg(product.color)}`}>{i + 1}</div>
                     <p className="text-sm text-foreground leading-relaxed">{b}</p>
                   </div>
                 </Reveal>

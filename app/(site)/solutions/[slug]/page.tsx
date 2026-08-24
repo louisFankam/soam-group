@@ -66,11 +66,7 @@ export default async function SolutionPage({
               <ul className="space-y-3">
                 {sol.points.map((p) => (
                   <li key={p} className="flex items-start gap-3 text-sm text-foreground">
-                    <span
-                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${chipBg(sol.color)}`}
-                    >
-                      <Icon i="check" size={14} />
-                    </span>
+                    <Icon i="check" size={16} className={`shrink-0 mt-0.5 ${chipBg(sol.color)}`} />
                     {p}
                   </li>
                 ))}

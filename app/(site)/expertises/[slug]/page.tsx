@@ -77,11 +77,7 @@ export default async function ExpertisePage({
               <ul className="space-y-3">
                 {exp.prestations.map((p) => (
                   <li key={p} className="flex items-start gap-3 text-sm text-foreground">
-                    <span
-                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${chipBg(exp.color)}`}
-                    >
-                      <Icon i="check" size={14} />
-                    </span>
+                    <Icon i="check" size={16} className={`shrink-0 mt-0.5 ${chipBg(exp.color)}`} />
                     {p}
                   </li>
                 ))}

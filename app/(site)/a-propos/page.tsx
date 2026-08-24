@@ -33,9 +33,7 @@ export default async function AProposPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Reveal>
               <div className="bg-card border border-card-border rounded-2xl p-7 h-full">
-                <span className={`inline-flex w-11 h-11 rounded-xl items-center justify-center mb-4 ${chipBg("primary")}`}>
-                  <Icon i="lightbulb" size={22} />
-                </span>
+                <Icon i="lightbulb" size={26} className="block mb-4 text-primary" />
                 <h2 className="font-headings font-bold text-xl text-foreground mb-3">
                   Notre mission
                 </h2>
@@ -48,9 +46,7 @@ export default async function AProposPage() {
             </Reveal>
             <Reveal delay={0.15}>
               <div className="bg-card border border-card-border rounded-2xl p-7 h-full">
-                <span className={`inline-flex w-11 h-11 rounded-xl items-center justify-center mb-4 ${chipBg("green")}`}>
-                  <Icon i="award" size={22} />
-                </span>
+                <Icon i="award" size={26} className="block mb-4 text-accent-green" />
                 <h2 className="font-headings font-bold text-xl text-foreground mb-3">
                   Notre vision
                 </h2>
@@ -73,11 +69,7 @@ export default async function AProposPage() {
             {whyItems.map((w) => (
               <Item key={w.title}>
                 <div className="flex gap-4 p-5 rounded-xl border border-border bg-card h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${chipBg(w.color)} transition-transform duration-300 group-hover:scale-110`}
-                  >
-                    <Icon i={w.icon} size={22} />
-                  </div>
+                  <Icon i={w.icon} size={26} className={`shrink-0 mt-0.5 ${chipBg(w.color)}`} />
                   <div>
                     <h3 className="font-headings font-semibold text-base text-foreground mb-1">
                       {w.title}
@@ -95,9 +87,7 @@ export default async function AProposPage() {
           <Stagger className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {stats.map((s) => (
               <Item key={s.label} className="flex items-center gap-3 lg:gap-4">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
-                  <Icon i={s.icon} size={20} className="text-white" />
-                </div>
+                <Icon i={s.icon} size={24} className="shrink-0 text-white" />
                 <div className="min-w-0">
                   <div className="text-white font-headings font-bold text-xl sm:text-2xl leading-none">
                     <CountUp value={s.n} />

@@ -67,9 +67,7 @@ export default async function Home() {
                 key={s.label}
                 className={`flex items-center gap-3 lg:gap-5 ${i < 3 ? "lg:border-r lg:border-white/20 lg:pr-5" : ""}`}
               >
-                <div className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
-                  <Icon i={s.icon} size={20} className="text-white" />
-                </div>
+                <Icon i={s.icon} size={24} className="shrink-0 text-white" />
                 <div className="min-w-0">
                   <div className="text-white font-headings font-bold text-xl sm:text-2xl lg:text-3xl leading-none">
                     <CountUp value={s.n} />
@@ -144,11 +142,7 @@ export default async function Home() {
                 <Item key={s.title}>
                   <div className="bg-card rounded-xl border border-card-border p-6 flex flex-col justify-between h-full shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 group">
                     <div>
-                      <div
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${chipBg(s.color)} transition-transform duration-300 group-hover:scale-110`}
-                      >
-                        <Icon i={s.icon} size={20} />
-                      </div>
+                      <Icon i={s.icon} size={24} className={`block mb-3 ${chipBg(s.color)}`} />
                       <h3 className="font-headings font-semibold text-base text-foreground mb-2">
                         {s.title}
                       </h3>
@@ -184,11 +178,7 @@ export default async function Home() {
             {whyItems.map((w) => (
               <Item key={w.title}>
                 <div className="flex gap-4 p-5 rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg h-full group">
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${chipBg(w.color)} transition-transform duration-300 group-hover:scale-110`}
-                  >
-                    <Icon i={w.icon} size={22} />
-                  </div>
+                  <Icon i={w.icon} size={26} className={`shrink-0 mt-0.5 ${chipBg(w.color)}`} />
                   <div>
                     <h3 className="font-headings font-semibold text-base text-foreground mb-1">
                       {w.title}
@@ -458,11 +448,7 @@ export default async function Home() {
                 ].map((c) => (
                   <Item key={c.label}>
                     <div className="flex gap-4 items-start p-4 rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md group">
-                      <div
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${chipBg(c.color)} transition-transform duration-300 group-hover:scale-110`}
-                      >
-                        <Icon i={c.icon} size={18} />
-                      </div>
+                      <Icon i={c.icon} size={22} className={`shrink-0 mt-0.5 ${chipBg(c.color)}`} />
                       <div>
                         <div className="text-xs font-body font-medium text-muted-foreground mb-0.5">
                           {c.label}

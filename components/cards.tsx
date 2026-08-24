@@ -18,7 +18,7 @@ export function SectionHeader({
     <div
       className={`mb-10 ${align === "center" ? "text-center mx-auto max-w-2xl" : ""}`}
     >
-      <span className="inline-block bg-secondary text-secondary-foreground text-xs font-semibold uppercase tracking-wide px-3.5 py-1.5 rounded-xl mb-4">
+      <span className="text-primary text-xs font-semibold uppercase tracking-wide mb-4 block">
         {badge}
       </span>
       <h2 className="font-headings font-bold text-3xl lg:text-4xl text-foreground mb-3">
@@ -55,9 +55,7 @@ export function ExpertiseCard({
       href={`/expertises/${slug}`}
       className="bg-card border border-card-border rounded-xl p-5 flex flex-col items-start transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 group h-full"
     >
-      <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${chipBg(color)} transition-transform duration-300 group-hover:scale-110`}>
-        <Icon i={icon} size={22} />
-      </div>
+      <Icon i={icon} size={26} className={`block mb-4 ${chipBg(color)}`} />
       <h3 className="font-headings font-semibold text-sm text-foreground mb-2">
         {title}
       </h3>
@@ -112,7 +110,7 @@ export function SoftwareCard({
         <ul className="space-y-2 mb-5">
           {features.map((f) => (
             <li key={f} className="flex items-center gap-2 text-sm text-foreground">
-              <Icon i="check" size={15} className={chipBg(color).split(" ")[1]} />
+              <Icon i="check" size={15} className={chipBg(color)} />
               {f}
             </li>
           ))}
@@ -194,7 +192,7 @@ export function NewsCard({
       <Img seed={imageSeed} imageUrl={imageUrl} w={640} h={360} alt={title} className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105" />
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center gap-3 mb-3">
-          <span className="bg-secondary text-secondary-foreground text-xs font-semibold px-3 py-1 rounded-xl">
+          <span className="text-primary text-xs font-semibold">
             {category}
           </span>
           <span className="text-muted-foreground text-xs">{date}</span>

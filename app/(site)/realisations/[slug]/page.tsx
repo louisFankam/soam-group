@@ -77,12 +77,12 @@ export default async function RealisationPage({
                 {projet.resultats.map((r) => (
                   <div
                     key={r}
-                    className={`rounded-xl p-5 ${chipBg(projet.color).split(" ")[0]} border border-card-border`}
+                    className="rounded-xl p-5 bg-card border border-card-border"
                   >
                     <Icon
                       i="check"
                       size={20}
-                      className={`${chipBg(projet.color).split(" ")[1]} mb-3`}
+                      className={`${chipBg(projet.color)} block mb-2`}
                     />
                     <p className="text-sm text-foreground font-medium leading-relaxed">
                       {r}

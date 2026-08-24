@@ -38,11 +38,7 @@ export default async function ExpertisesPage() {
                     className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="p-5">
-                    <div
-                      className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${chipBg(e.color)} transition-transform duration-300 group-hover:scale-110`}
-                    >
-                      <Icon i={e.icon} size={22} />
-                    </div>
+                    <Icon i={e.icon} size={26} className={`block mb-4 ${chipBg(e.color)}`} />
                     <h2 className="font-headings font-semibold text-base text-foreground group-hover:text-primary transition-colors">
                       {e.title}
                     </h2>
