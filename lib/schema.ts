@@ -120,3 +120,20 @@ export const tentativesConnexion = sqliteTable("tentatives_connexion", {
   echecs: integer("echecs").notNull().default(0),
   bloqueJusqua: integer("bloque_jusqua"), // epoch secondes, null = non bloqué
 });
+
+// Demandes de devis du formulaire public /devis, traitées dans /admin/devis.
+export const devis = sqliteTable("devis", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  nom: text("nom").notNull(),
+  organisation: text("organisation").notNull().default(""),
+  telephone: text("telephone").notNull(),
+  email: text("email").notNull(),
+  secteur: text("secteur").notNull(),
+  service: text("service").notNull(),
+  budget: text("budget").notNull().default(""),
+  description: text("description").notNull(),
+  fichierUrl: text("fichier_url"),
+  // nouveau | en_cours | traite | refuse
+  statut: text("statut").notNull().default("nouveau"),
+  creeLe: integer("cree_le").notNull().$defaultFn(() => Math.floor(Date.now() / 1000)),
+});

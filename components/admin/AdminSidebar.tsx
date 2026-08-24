@@ -16,7 +16,13 @@ const liens = [
   { href: "/admin/equipe", label: "Équipe", icone: "users" },
 ];
 
-export default function AdminSidebar({ nonLus }: { nonLus: number }) {
+export default function AdminSidebar({
+  nonLus,
+  devisNouveaux,
+}: {
+  nonLus: number;
+  devisNouveaux: number;
+}) {
   const pathname = usePathname();
 
   const lien = (l: { href: string; label: string; icone: string }) => {
@@ -38,6 +44,11 @@ export default function AdminSidebar({ nonLus }: { nonLus: number }) {
             {nonLus}
           </span>
         )}
+        {l.label === "Devis" && devisNouveaux > 0 && (
+          <span className="bg-accent-green text-white text-xs font-bold px-2 py-0.5 rounded-full">
+            {devisNouveaux}
+          </span>
+        )}
       </Link>
     );
   };
@@ -56,6 +67,7 @@ export default function AdminSidebar({ nonLus }: { nonLus: number }) {
           </div>
         </div>
         {liens.map(lien)}
+        {lien({ href: "/admin/devis", label: "Devis", icone: "folder-check" })}
         {lien({ href: "/admin/messages", label: "Messages", icone: "mail" })}
         {lien({ href: "/admin/statistiques", label: "Statistiques", icone: "chart-bar" })}
         {lien({ href: "/admin/parametres", label: "Paramètres", icone: "server" })}
@@ -82,7 +94,7 @@ export default function AdminSidebar({ nonLus }: { nonLus: number }) {
       {/* Mobile : barre horizontale scrollable */}
       <nav className="lg:hidden sticky top-0 z-40 bg-hero-dark overflow-x-auto">
         <div className="flex items-center gap-1 px-3 py-2 whitespace-nowrap">
-          {[...liens, { href: "/admin/messages", label: "Messages", icone: "mail" }, { href: "/admin/statistiques", label: "Statistiques", icone: "chart-bar" }, { href: "/admin/parametres", label: "Paramètres", icone: "server" }].map(
+          {[...liens, { href: "/admin/devis", label: "Devis", icone: "folder-check" }, { href: "/admin/messages", label: "Messages", icone: "mail" }, { href: "/admin/statistiques", label: "Statistiques", icone: "chart-bar" }, { href: "/admin/parametres", label: "Paramètres", icone: "server" }].map(
             (l) => {
               const actif = l.href === "/admin" ? pathname === "/admin" : pathname.startsWith(l.href);
               return (

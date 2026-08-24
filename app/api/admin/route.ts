@@ -3,7 +3,7 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { db } from "@/lib/db";
-import { messages, parametres } from "@/lib/schema";
+import { devis, messages, parametres } from "@/lib/schema";
 import { TAGS } from "@/lib/data";
 import { ENTITES } from "@/lib/admin-entites";
 import { sessionActive } from "@/lib/auth";
@@ -50,6 +50,19 @@ export async function POST(req: Request) {
     }
     revalidatePath("/admin/messages");
     return NextResponse.redirect(new URL("/admin/messages", req.url), { status: 303 });
+  }
+
+  // ---- Devis : changement de statut ---------------------------------------
+  if (action === "devis-statut") {
+    const id = Number(formData.get("id"));
+    const statut = String(formData.get("statut") ?? "");
+    const valides = ["nouveau", "en_cours", "traite", "refuse"];
+    if (!Number.isFinite(id) || !valides.includes(statut)) {
+      return NextResponse.redirect(new URL("/admin/devis", req.url), { status: 303 });
+    }
+    await db.update(devis).set({ statut }).where(eq(devis.id, id));
+    revalidatePath("/admin/devis");
+    return NextResponse.redirect(new URL("/admin/devis", req.url), { status: 303 });
   }
 
   // ---- Paramètres : coordonnées + blocs JSON ------------------------------

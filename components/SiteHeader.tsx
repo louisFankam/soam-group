@@ -58,7 +58,7 @@ export default function SiteHeader({
           ))}
         </nav>
         <a
-          href="/contact"
+          href="/devis"
           className="hidden lg:inline-flex bg-primary hover:bg-primary-deep active:scale-[0.98] transition-all text-primary-foreground font-body font-semibold text-sm px-5 py-2.5 rounded-xl"
         >
           Demander un devis
@@ -94,7 +94,7 @@ export default function SiteHeader({
                 </a>
               ))}
               <a
-                href="/contact"
+                href="/devis"
                 onClick={() => setOpen(false)}
                 className="mt-2 bg-primary text-primary-foreground text-sm font-semibold px-4 py-3 rounded-xl text-center"
               >
