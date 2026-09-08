@@ -74,18 +74,34 @@ async function main() {
   }
   console.log(`✓ ${Object.keys(params).length} paramètres`);
 
-  // Compte admin
-  const email = process.env.ADMIN_EMAIL ?? "admin@soamgroup.net";
-  const mdp = process.env.ADMIN_PASSWORD ?? "admin123";
-  if (!process.env.ADMIN_PASSWORD) {
-    console.warn("⚠ ADMIN_PASSWORD non défini — mot de passe par défaut 'admin123' (dev uniquement !)");
-  }
+  // Utilisateurs
   await db.delete(schema.utilisateurs);
+
+  const saEmail = process.env.SUPERADMIN_EMAIL ?? "admin@soamgroup.net";
+  const saMdp = process.env.SUPERADMIN_PASSWORD ?? "admin123";
+  if (!process.env.SUPERADMIN_PASSWORD) {
+    console.warn("⚠ SUPERADMIN_PASSWORD non défini — mot de passe par défaut 'admin123' (dev uniquement !)");
+  }
   await db.insert(schema.utilisateurs).values({
-    email,
-    motDePasseHash: hashMotDePasse(mdp),
+    email: saEmail,
+    nom: "Directeur Général",
+    motDePasseHash: hashMotDePasse(saMdp),
+    role: "superadmin",
   });
-  console.log(`✓ admin créé : ${email}`);
+  console.log(`✓ superadmin : ${saEmail} / ${saMdp}`);
+
+  const edEmail = process.env.EDITEUR_EMAIL ?? "editeur@soamgroup.net";
+  const edMdp = process.env.EDITEUR_PASSWORD ?? "editeur123";
+  if (!process.env.EDITEUR_PASSWORD) {
+    console.warn("⚠ EDITEUR_PASSWORD non défini — mot de passe par défaut 'editeur123' (dev uniquement !)");
+  }
+  await db.insert(schema.utilisateurs).values({
+    email: edEmail,
+    nom: "Éditeur",
+    motDePasseHash: hashMotDePasse(edMdp),
+    role: "editor",
+  });
+  console.log(`✓ éditeur  : ${edEmail} / ${edMdp}`);
 
   process.exit(0);
 }

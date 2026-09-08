@@ -45,7 +45,8 @@ export async function connexion(formData: FormData) {
   }
 
   await db.delete(tentativesConnexion).where(eq(tentativesConnexion.email, email));
-  await creerSession(admin.email);
+  await creerSession(admin.email, admin.role);
+  if (admin.role === "superadmin") redirect("/superadmin");
   redirect("/admin");
 }
 

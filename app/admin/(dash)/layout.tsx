@@ -10,8 +10,8 @@ export default async function AdminDashLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const email = await sessionActive();
-  if (!email) redirect("/admin/login");
+  const session = await sessionActive();
+  if (!session) redirect("/admin/login");
 
   const [{ value: nonLus }] = await db
     .select({ value: count() })

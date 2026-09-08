@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SuiviVues from "@/components/SuiviVues";
 import { MotionConfigUser, ScrollProgress } from "@/components/motion";
 import { getExpertises, getParametres } from "@/lib/data";
+import { SettingsCssVars } from "@/components/SettingsCssVars";
 
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const [parametres, expertises] = await Promise.all([
@@ -32,6 +33,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 
   return (
     <MotionConfigUser>
+      <SettingsCssVars />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

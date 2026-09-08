@@ -43,6 +43,20 @@
       "when": 1787595600560,
       "tag": "0005_devis",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1788428746760,
+      "tag": "0006_tricky_earthquake",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1788432254963,
+      "tag": "0007_futuristic_skreet",
+      "breakpoints": true
     }
   ]
 }

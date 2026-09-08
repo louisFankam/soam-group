@@ -11,7 +11,9 @@ export default async function LoginPage({
 }: {
   searchParams: Promise<{ erreur?: string; email?: string }>;
 }) {
-  if (await sessionActive()) redirect("/admin");
+  const session = await sessionActive();
+  if (session?.role === "superadmin") redirect("/superadmin");
+  if (session) redirect("/admin");
   const { erreur, email: emailSaisi } = await searchParams;
 
   return (

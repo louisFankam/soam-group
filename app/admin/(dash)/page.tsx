@@ -8,7 +8,8 @@ import { sessionActive } from "@/lib/auth";
 export const dynamic = "force-dynamic";
 
 export default async function AdminDashboard() {
-  const email = (await sessionActive()) ?? "admin";
+  const session = await sessionActive();
+  const email = session?.email ?? "admin";
   const debutMois = new Date().toISOString().slice(0, 8) + "01";
 
   const [[nbArticles], [nbRealisations], [nbMessages], derniers, [vuesMois]] = await Promise.all([
